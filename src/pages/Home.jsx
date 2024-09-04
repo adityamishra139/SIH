@@ -6,7 +6,7 @@ const Home = () => {
       {/* Header */}
       <header className="bg-blue-900 text-white py-4">
         <div className="container mx-auto px-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold">AI-Driven Research Engine</h1>
+          <h1 className="text-2xl font-bold">LegalEdgeAI</h1>
           <nav>
             <ul className="flex space-x-6">
               <li><a href="#" className="hover:text-gray-300">Home</a></li>
@@ -95,7 +95,7 @@ const Home = () => {
       {/* Footer */}
       <footer className="bg-blue-900 text-white py-8">
         <div className="container mx-auto px-4 text-center">
-          <p>&copy; 2024 AI-Driven Research Engine. All rights reserved.</p>
+          <p>&copy; 2024 LegalEdgeAI. All rights reserved.</p>
         </div>
       </footer>
     </div>
