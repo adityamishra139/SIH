@@ -1,106 +1,86 @@
-import React from 'react';
-import Navbar from '../components/Navbar';
-import src from '../images/scales-wallpaper-preview.jpg'; // Importing the image
+import React, { useState, useEffect } from 'react';
 
-const Home = () => {
+const Navbar = () => {
+  const [navbarOpen, setNavbarOpen] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  // Add scroll listener to handle the background transparency on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <div className="bg-gray-950 text-gray-100 min-h-screen font-sans">
-      <Navbar />
-
-      {/* Hero Section */}
-      <section
-        className="relative flex items-center justify-center h-screen bg-cover bg-center"
-        style={{ backgroundImage: `url(${src})` }}
-      >
-        <div className="absolute inset-0 bg-black opacity-50"></div> {/* Gradient Overlay */}
-        <div className="container mx-auto px-6 text-center z-10">
-          <h2 className="text-6xl font-extrabold mb-6 text-white leading-tight drop-shadow-lg">
-            Simplify Legal Research with AI
-          </h2>
-          <p className="text-xl mb-8 text-gray-300 max-w-2xl mx-auto leading-relaxed">
-            An advanced AI-driven research tool to streamline legal processes and expedite commercial dispute resolution for judges and legal professionals.
-          </p>
-          <a
-            href="#features"
-            className="inline-block bg-indigo-600 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:bg-indigo-700 transition-transform transform hover:scale-105"
-          >
-            Learn More
+    <header
+      className={`fixed w-full top-0 left-0 z-50 transition-all duration-300 ${
+        scrollPosition > 50 ? 'bg-gray-900 shadow-lg' : 'bg-transparent'
+      }`}
+    >
+      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+        <h1 className="text-3xl font-extrabold text-indigo-400 hover:text-white transition-transform transform hover:scale-105">
+          LegalEdgeAI
+        </h1>
+        <nav className="hidden md:flex space-x-8 text-lg">
+          <a href="#home" className="text-gray-400 hover:text-indigo-400 transition-colors">
+            Home
           </a>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section id="features" className="py-24 bg-gray-950 relative">
-        <div className="container mx-auto px-6">
-          <h3 className="text-5xl font-extrabold text-center mb-16 text-indigo-400 tracking-tight leading-tight">
-            Key Features
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
-            <div className="bg-gray-900 p-10 rounded-lg shadow-lg hover:shadow-2xl transition-shadow transform hover:-translate-y-2">
-              <h4 className="text-2xl font-bold mb-4 text-indigo-400">Data Aggregation</h4>
-              <p className="text-gray-400 leading-relaxed">
-                Aggregate and process data from various legal sources, including case laws and statutes, for comprehensive insights.
-              </p>
-            </div>
-            <div className="bg-gray-900 p-10 rounded-lg shadow-lg hover:shadow-2xl transition-shadow transform hover:-translate-y-2">
-              <h4 className="text-2xl font-bold mb-4 text-indigo-400">Predictive Analytics</h4>
-              <p className="text-gray-400 leading-relaxed">
-                Use AI-powered predictive analytics to forecast case outcomes based on historical trends and legal precedents.
-              </p>
-            </div>
-            <div className="bg-gray-900 p-10 rounded-lg shadow-lg hover:shadow-2xl transition-shadow transform hover:-translate-y-2">
-              <h4 className="text-2xl font-bold mb-4 text-indigo-400">Customization</h4>
-              <p className="text-gray-400 leading-relaxed">
-                Tailor results based on the specific legal requirements of each case to deliver more relevant outcomes.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works Section */}
-      <section className="py-24 bg-gradient-to-b from-black to-gray-900 relative">
-        <div className="container mx-auto px-6">
-          <h3 className="text-5xl font-extrabold text-center mb-16 text-indigo-400 leading-tight">
+          <a href="#features" className="text-gray-400 hover:text-indigo-400 transition-colors">
+            Features
+          </a>
+          <a href="#how-it-works" className="text-gray-400 hover:text-indigo-400 transition-colors">
             How It Works
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="bg-gray-800 p-8 rounded-lg shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-2">
-              <h4 className="text-2xl font-bold mb-4 text-indigo-400">Step 1: Input Your Query</h4>
-              <p className="text-gray-400 leading-relaxed">
-                Enter details of your commercial case or legal query into the AI-driven research engine for processing.
-              </p>
-            </div>
-            <div className="bg-gray-800 p-8 rounded-lg shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-2">
-              <h4 className="text-2xl font-bold mb-4 text-indigo-400">Step 2: Review Customized Results</h4>
-              <p className="text-gray-400 leading-relaxed">
-                The engine provides tailored results including relevant case laws, statutes, and legal references.
-              </p>
-            </div>
-            <div className="bg-gray-800 p-8 rounded-lg shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-2">
-              <h4 className="text-2xl font-bold mb-4 text-indigo-400">Step 3: Analyze Predictive Insights</h4>
-              <p className="text-gray-400 leading-relaxed">
-                Utilize AI-powered insights to assess potential outcomes based on historical data and trends.
-              </p>
-            </div>
-            <div className="bg-gray-800 p-8 rounded-lg shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-2">
-              <h4 className="text-2xl font-bold mb-4 text-indigo-400">Step 4: Make Informed Decisions</h4>
-              <p className="text-gray-400 leading-relaxed">
-                Leverage data-driven insights to make more informed decisions in your legal strategy.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+          </a>
+          <a href="#contact" className="text-gray-400 hover:text-indigo-400 transition-colors">
+            Contact
+          </a>
+        </nav>
+        <button
+          className="md:hidden focus:outline-none text-gray-400"
+          onClick={() => setNavbarOpen(!navbarOpen)}
+        >
+          <svg
+            className="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d={navbarOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16m-7 6h7'}
+            />
+          </svg>
+        </button>
+      </div>
 
-      {/* Footer */}
-      <footer className="bg-gray-950 text-gray-400 py-8">
-        <div className="container mx-auto px-6 text-center">
-          <p>&copy; 2024 LegalEdgeAI. All rights reserved.</p>
-        </div>
-      </footer>
-    </div>
+      {/* Mobile Menu */}
+      <div
+        className={`md:hidden transition-all duration-300 ${
+          navbarOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+        } overflow-hidden`}
+      >
+        <nav className="px-6 py-4 bg-gray-900 text-lg space-y-4">
+          <a href="#home" className="block text-gray-400 hover:text-indigo-400 transition-colors">
+            Home
+          </a>
+          <a href="#features" className="block text-gray-400 hover:text-indigo-400 transition-colors">
+            Features
+          </a>
+          <a href="#how-it-works" className="block text-gray-400 hover:text-indigo-400 transition-colors">
+            How It Works
+          </a>
+          <a href="#contact" className="block text-gray-400 hover:text-indigo-400 transition-colors">
+            Contact
+          </a>
+        </nav>
+      </div>
+    </header>
   );
 };
 
-export default Home;
+export default Navbar;

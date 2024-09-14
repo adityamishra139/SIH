@@ -1,7 +1,6 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import src from '../../public/scales-wallpaper-preview.jpg'; // Importing the image
-
+import image1 from '../images/scales-wallpaper-preview.jpg'
 const Home = () => {
   return (
     <div className="bg-gray-950 text-gray-100 min-h-screen font-sans">
@@ -10,7 +9,7 @@ const Home = () => {
       {/* Hero Section */}
       <section
         className="relative flex items-center justify-center h-screen bg-cover bg-center"
-        style={{ backgroundImage: `url(${src})` }}
+        style={{ backgroundImage: `url(${image1})` }}
       >
         <div className="absolute inset-0 bg-black opacity-50"></div> {/* Gradient Overlay */}
         <div className="container mx-auto px-6 text-center z-10">
@@ -29,15 +28,16 @@ const Home = () => {
         </div>
       </section>
 
-      {/* SVG Wave Transition (Below Hero Section) */}
+      {/* Full-Width SVG Wave Transition (Below Hero Section) */}
       <div className="relative">
         <svg
-          className="absolute top-0 left-0 w-full h-32"
+          className="w-full h-32"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1440 320"
         >
           <path
             fill="#0F172A"
+            fillOpacity="1"
             d="M0,288L48,266.7C96,245,192,203,288,192C384,181,480,203,576,224C672,245,768,267,864,250.7C960,235,1056,181,1152,165.3C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
           ></path>
         </svg>
@@ -72,15 +72,17 @@ const Home = () => {
         </div>
       </section>
 
-      {/* SVG Wave Transition (Above How It Works Section) */}
-      <div className="relative">
+      {/* Full-Width SVG Wave Transition (Above How It Works Section) */}
+      <div className="relative w-full overflow-hidden">
         <svg
-          className="absolute bottom-0 left-0 w-full h-32"
+          className="absolute bottom-0 left-0 w-screen h-full"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1440 320"
+          preserveAspectRatio="none"
         >
           <path
             fill="#0F172A"
+            fillOpacity="1"
             d="M0,288L48,266.7C96,245,192,203,288,192C384,181,480,203,576,224C672,245,768,267,864,250.7C960,235,1056,181,1152,165.3C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
           ></path>
         </svg>
