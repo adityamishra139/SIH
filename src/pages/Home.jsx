@@ -1,6 +1,8 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import image1 from '../images/scales-wallpaper-preview.jpg'
+import image1 from '../images/scales-wallpaper-preview.jpg';
+import Typewriter from '../components/Typewriter';
+
 const Home = () => {
   return (
     <div className="bg-gray-950 text-gray-100 min-h-screen font-sans">
@@ -13,12 +15,14 @@ const Home = () => {
       >
         <div className="absolute inset-0 bg-black opacity-50"></div> {/* Gradient Overlay */}
         <div className="container mx-auto px-6 text-center z-10">
-          <h2 className="text-6xl font-extrabold mb-6 text-white leading-tight drop-shadow-lg">
-            Simplify Legal Research with AI
+          <h2 className="text-6xl font-bold mb-6 text-white leading-tight drop-shadow-lg">
+            <Typewriter
+            text = "Simplify Legal Research with AI"
+            speed={70}
+            />
           </h2>
           <p className="text-xl mb-8 text-gray-300 max-w-2xl mx-auto leading-relaxed">
-            An advanced AI-driven research tool to streamline legal processes and expedite commercial dispute resolution for judges and legal professionals.
-          </p>
+          An advanced AI-driven research tool to streamline legal processes and expedite commercial dispute resolution for judges and legal professionals.</p>
           <a
             href="#features"
             className="inline-block bg-indigo-600 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:bg-indigo-700 transition-transform transform hover:scale-105"
@@ -27,22 +31,6 @@ const Home = () => {
           </a>
         </div>
       </section>
-
-      {/* Full-Width SVG Wave Transition (Below Hero Section) */}
-      <div className="relative">
-        <svg
-          className="w-full h-32"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1440 320"
-        >
-          <path
-            fill="#0F172A"
-            fillOpacity="1"
-            d="M0,288L48,266.7C96,245,192,203,288,192C384,181,480,203,576,224C672,245,768,267,864,250.7C960,235,1056,181,1152,165.3C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-          ></path>
-        </svg>
-      </div>
-
       {/* Features Section */}
       <section id="features" className="py-24 bg-gray-950 relative">
         <div className="container mx-auto px-6">
@@ -71,22 +59,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      {/* Full-Width SVG Wave Transition (Above How It Works Section) */}
-      <div className="relative w-full overflow-hidden">
-        <svg
-          className="absolute bottom-0 left-0 w-screen h-full"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1440 320"
-          preserveAspectRatio="none"
-        >
-          <path
-            fill="#0F172A"
-            fillOpacity="1"
-            d="M0,288L48,266.7C96,245,192,203,288,192C384,181,480,203,576,224C672,245,768,267,864,250.7C960,235,1056,181,1152,165.3C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-          ></path>
-        </svg>
-      </div>
 
       {/* How It Works Section */}
       <section className="py-24 bg-gradient-to-b from-black to-gray-900 relative">
@@ -123,7 +95,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Footer */}
+     {/* Footer */}
       <footer className="bg-gray-950 text-gray-400 py-8">
         <div className="container mx-auto px-6 text-center">
           <p>&copy; 2024 LegalEdgeAI. All rights reserved.</p>
