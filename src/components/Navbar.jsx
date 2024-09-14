@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import src from '../../public/scales-wallpaper-preview.jpg'; // Importing the image
+import src from '../images/scales-wallpaper-preview.jpg'; // Importing the image
 
 const Home = () => {
   return (
@@ -28,20 +28,6 @@ const Home = () => {
           </a>
         </div>
       </section>
-
-      {/* SVG Wave Transition (Below Hero Section) */}
-      <div className="relative">
-        <svg
-          className="absolute top-0 left-0 w-full h-32"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1440 320"
-        >
-          <path
-            fill="#0F172A"
-            d="M0,288L48,266.7C96,245,192,203,288,192C384,181,480,203,576,224C672,245,768,267,864,250.7C960,235,1056,181,1152,165.3C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-          ></path>
-        </svg>
-      </div>
 
       {/* Features Section */}
       <section id="features" className="py-24 bg-gray-950 relative">
@@ -71,20 +57,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      {/* SVG Wave Transition (Above How It Works Section) */}
-      <div className="relative">
-        <svg
-          className="absolute bottom-0 left-0 w-full h-32"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1440 320"
-        >
-          <path
-            fill="#0F172A"
-            d="M0,288L48,266.7C96,245,192,203,288,192C384,181,480,203,576,224C672,245,768,267,864,250.7C960,235,1056,181,1152,165.3C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-          ></path>
-        </svg>
-      </div>
 
       {/* How It Works Section */}
       <section className="py-24 bg-gradient-to-b from-black to-gray-900 relative">
