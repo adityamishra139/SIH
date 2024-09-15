@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import { PlaceholdersAndVanishInput } from "../components/UI/PlaceholdersAndVanishInput";
-import logo from "../images/BGimg.jpeg"; // Assuming you're using a local image file
+import logo from "../images/Logo.jpg"; 
 
 const CasePage = () => {
   const [caseDetails, setCaseDetails] = useState("");
@@ -23,17 +23,18 @@ const CasePage = () => {
   return (
     <div className="bg-gray-950 min-h-screen text-gray-100 flex flex-col relative">
       {/* Header */}
-      <Navbar present={false}/>
+      <Navbar />
 
       {/* Output Section */}
       <section
   className="flex-grow container mx-auto px-4 py-8 overflow-auto max-h-screen relative"
   style={{
     backgroundImage: `url(${logo})`,
-    backgroundSize: '17%',
+    backgroundSize: '7%',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    opacity:0.2,
+    backgroundBlendMode: 'overlay', /* Other options: multiply, screen, etc. */
+    opacity:0.1,
   }}
 >
     {/* Case details rendering */}

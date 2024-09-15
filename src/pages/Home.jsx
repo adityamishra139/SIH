@@ -6,7 +6,7 @@ import Typewriter from '../components/Typewriter';
 const Home = () => {
   return (
     <div className="bg-gray-950 text-gray-100 min-h-screen font-sans">
-      <Navbar present={true}/>
+      <Navbar />
 
       {/* Hero Section */}
       <section
