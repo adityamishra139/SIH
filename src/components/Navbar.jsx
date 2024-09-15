@@ -1,6 +1,7 @@
+import { h1 } from 'framer-motion/client';
 import React, { useState, useEffect } from 'react';
 
-const Navbar = () => {
+const Navbar = ({present}) => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -19,10 +20,11 @@ const Navbar = () => {
         scrollPosition > 50 ? 'bg-gray-900 shadow-lg' : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <h1 className="text-3xl font-extrabold text-indigo-400 hover:text-white transition-transform transform hover:scale-105">
+      <div className="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        {present ? (<h1 className="text-3xl font-extrabold text-indigo-400 hover:text-white transition-transform transform hover:scale-105">
           LegalEdgeAI
-        </h1>
+        </h1>):<h1></h1>}
         <nav className="hidden md:flex space-x-8 text-lg">
           <a href="#home" className="text-gray-400 hover:text-indigo-400 transition-colors">
             Home

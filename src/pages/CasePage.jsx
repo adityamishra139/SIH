@@ -23,33 +23,23 @@ const CasePage = () => {
   return (
     <div className="bg-gray-950 min-h-screen text-gray-100 flex flex-col relative">
       {/* Header */}
-      <Navbar />
+      <Navbar present={false}/>
 
       {/* Output Section */}
       <section
   className="flex-grow container mx-auto px-4 py-8 overflow-auto max-h-screen relative"
   style={{
     backgroundImage: `url(${logo})`,
-    backgroundSize: '35%',
+    backgroundSize: '17%',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
+    opacity:0.2,
   }}
 >
-  <div
-    style={{
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      backgroundColor: 'rgba(255, 255, 255, 0.5)', // Adjust RGBA values for desired transparency
-      zIndex: -1, // Ensure the overlay is behind content
-    }}
-  />
-  {/* Case details rendering */}
+    {/* Case details rendering */}
   <div className="max-w-3xl mx-auto space-y-4 mb-8 p-4 relative z-10">
           {submittedData.length === 0 ? (
-            <p className="text-gray-400 text-center">No case details submitted.</p>
+            <p className="text-gray-400 text-center pt-4"></p>
           ) : (
             submittedData.map((data, index) => (
               <div
