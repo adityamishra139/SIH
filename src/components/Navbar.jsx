@@ -1,3 +1,4 @@
+import { h1 } from 'framer-motion/client';
 import React, { useState, useEffect } from 'react';
 
 const Navbar = () => {
@@ -19,16 +20,17 @@ const Navbar = () => {
         scrollPosition > 50 ? 'bg-gray-900 shadow-lg' : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <h1 className="text-3xl font-extrabold text-indigo-400 hover:text-white transition-transform transform hover:scale-105">
+      <div className="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+       <h1 className="text-3xl font-extrabold text-indigo-400 hover:text-white transition-transform transform hover:scale-105">
           LegalEdgeAI
         </h1>
         <nav className="hidden md:flex space-x-8 text-lg">
-          <a href="#home" className="text-gray-400 hover:text-indigo-400 transition-colors">
+          <a href="/" className="text-gray-400 hover:text-indigo-400 transition-colors">
             Home
           </a>
-          <a href="#features" className="text-gray-400 hover:text-indigo-400 transition-colors">
-            Features
+          <a href="/assistant" className="text-gray-400 hover:text-indigo-400 transition-colors">
+            Assistant
           </a>
           <a href="#how-it-works" className="text-gray-400 hover:text-indigo-400 transition-colors">
             How It Works
@@ -65,11 +67,11 @@ const Navbar = () => {
         } overflow-hidden`}
       >
         <nav className="px-6 py-4 bg-gray-900 text-lg space-y-4">
-          <a href="#home" className="block text-gray-400 hover:text-indigo-400 transition-colors">
+          <a href="/" className="block text-gray-400 hover:text-indigo-400 transition-colors">
             Home
           </a>
-          <a href="#features" className="block text-gray-400 hover:text-indigo-400 transition-colors">
-            Features
+          <a href="/assistant" className="block text-gray-400 hover:text-indigo-400 transition-colors">
+            Assistant
           </a>
           <a href="#how-it-works" className="block text-gray-400 hover:text-indigo-400 transition-colors">
             How It Works
